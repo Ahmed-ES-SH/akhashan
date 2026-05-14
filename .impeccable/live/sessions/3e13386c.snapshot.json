@@ -1,0 +1,23 @@
+{
+  "id": "3e13386c",
+  "phase": "completed",
+  "pageUrl": "/en",
+  "sourceFile": "app/_components/website/_home/HeroSection.tsx",
+  "expectedVariants": 2,
+  "arrivedVariants": 2,
+  "visibleVariant": 1,
+  "paramValues": {
+    "deco-intensity": 0.5,
+    "col-balance": "equal"
+  },
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 3,
+  "activeOwner": "9d21bbc1",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [],
+  "updatedAt": "2026-05-14T15:55:10.649Z"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "5ca795bc",
+  "phase": "completed",
+  "pageUrl": "/en",
+  "sourceFile": "app/_components/website/_home/Navbar.tsx",
+  "expectedVariants": 2,
+  "arrivedVariants": 2,
+  "visibleVariant": 2,
+  "paramValues": {
+    "bg-darkness": 0.3,
+    "blur": "medium"
+  },
+  "pendingEventSeq": null,
+  "pendingEvent": null,
+  "deliveryLease": null,
+  "checkpointRevision": 4,
+  "activeOwner": "0386fa65",
+  "sourceMarkers": {},
+  "fallbackMode": null,
+  "annotationArtifacts": [],
+  "diagnostics": [
+    {
+      "error": "carbonize_cleanup_required",
+      "file": "app/_components/website/_home/Navbar.tsx",
+      "message": "Accepted variant still has carbonize markers that must be folded into source CSS."
+    }
+  ],
+  "updatedAt": "2026-05-14T15:37:30.016Z"
+}
