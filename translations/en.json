@@ -1,4 +1,43 @@
 {
+  "login": {
+    "meta": {
+      "title": "Login — Abdullah Khashan Al-Shammari Recruitment",
+      "description": "Admin panel login for Abdullah Khashan Al-Shammari Recruitment Company"
+    },
+    "page": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to access the admin dashboard"
+    },
+    "form": {
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "submitButton": "Sign In",
+      "submittingButton": "Signing in..."
+    },
+    "errors": {
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPassword": "Password must be at least 8 characters",
+      "unauthorized": "Invalid email or password",
+      "rateLimited": "Too many login attempts. Please try again later.",
+      "serverError": "An unexpected error occurred. Please try again.",
+      "required": "This field is required"
+    },
+    "success": {
+      "loggedIn": "Welcome back, {name}"
+    }
+  },
+  "userButton": {
+    "profile": "My Profile",
+    "adminServices": "Services",
+    "adminContactMessages": "Contact Messages",
+    "adminCountries": "Countries",
+    "logout": "Sign Out",
+    "logoutSuccess": "You have been signed out successfully",
+    "loading": "Loading..."
+  },
   "home": {
     "meta": {
       "title": "Abdullah Khashan Al-Shammari Recruitment | Premier Manpower Services",
@@ -274,13 +313,14 @@
         "ar": "— شركة عبدالله خشّان الشمري للاستقدام"
       }
     },
-    "contact": {
+      "contact": {
       "label": { "en": "Get In Touch", "ar": "تواصل معنا" },
       "heading": { "en": "Send Us Your Recruitment Request", "ar": "أرسل طلب استقدامك" },
       "description": {
         "en": "Fill in the form and our team will respond within 24 hours with a tailored solution.",
         "ar": "املأ النموذج وسيرد عليك فريقنا خلال ٢٤ ساعة بحل مخصص"
       },
+      "responseTime": { "en": "24h response time", "ar": "رد خلال ٢٤ ساعة" },
       "form": {
         "name": { "en": "Full Name", "ar": "الاسم الكامل" },
         "namePlaceholder": { "en": "Your full name", "ar": "اسمك الكامل" },
@@ -301,6 +341,8 @@
           "ar": "تم إرسال طلبك بنجاح. سنتواصل معك خلال ٢٤ ساعة."
         },
         "error": { "en": "Something went wrong. Please try again.", "ar": "حدث خطأ. يرجى المحاولة مرة أخرى." },
+        "rateLimit": { "en": "Too many attempts. Please try again later.", "ar": "محاولات كثيرة جداً، يرجى المحاولة لاحقاً." },
+        "responseTime": { "en": "24h response time", "ar": "رد خلال ٢٤ ساعة" },
         "validation": {
           "nameRequired": { "en": "Please enter your name", "ar": "يرجى إدخال اسمك" },
           "emailRequired": { "en": "Please enter your email", "ar": "يرجى إدخال بريدك الإلكتروني" },
@@ -310,6 +352,15 @@
           "countryRequired": { "en": "Please select a country", "ar": "يرجى اختيار الدولة" }
         }
       }
+    },
+    "error": {
+      "title": { "en": "Something went wrong", "ar": "حدث خطأ ما" },
+      "description": {
+        "en": "We couldn't load the page content. Please try refreshing or contact us if the problem persists.",
+        "ar": "لم نتمكن من تحميل محتوى الصفحة. يرجى المحاولة مرة أخرى أو التواصل معنا إذا استمرت المشكلة."
+      },
+      "tryAgain": { "en": "Try Again", "ar": "حاول مرة أخرى" },
+      "contactSupport": { "en": "Contact Support", "ar": "تواصل مع الدعم" }
     },
     "cta": {
       "heading": { "en": "Ready to Get Started?", "ar": "هل أنت مستعد للبدء؟" },
@@ -347,6 +398,385 @@
         "en": "© 2026 Abdullah Khashan Al-Shammari Recruitment. All rights reserved.",
         "ar": "© 2026 شركة عبدالله خشّان الشمري للاستقدام. جميع الحقوق محفوظة."
       }
+    }
+  },
+  "admin": {
+    "common": {
+      "table": {
+        "noData": "No data available"
+      },
+      "statusActive": "Active",
+      "statusInactive": "Inactive"
+    },
+    "editor": {
+      "saveAll": "Save All Changes",
+      "discard": "Discard",
+      "saving": "Saving...",
+      "saved": "All changes saved successfully",
+      "unsaved": "{count} unsaved change",
+      "unsaved_plural": "{count} unsaved changes",
+      "popupSave": "Save",
+      "popupCancel": "Cancel",
+      "popupSaving": "Saving...",
+      "editLabel": "Edit {field}"
+    },
+    "contactMessages": {
+      "statusNew": "New",
+      "statusRead": "Read",
+      "statusReplied": "Replied",
+      "statusArchived": "Archived",
+      "title": "Messages Inbox",
+      "unreadCount": "Unread",
+      "filterAll": "All",
+      "filterNew": "New",
+      "filterRead": "Read",
+      "filterReplied": "Replied",
+      "filterArchived": "Archived",
+      "noMessages": "No messages yet.",
+      "noMessagesFiltered": "No messages with this status.",
+      "detailTitle": "Message Detail",
+      "backToList": "Back to Inbox",
+      "sender": "From",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service",
+      "country": "Country",
+      "message": "Message",
+      "receivedAt": "Received",
+      "updatedAt": "Last Updated",
+      "markAsRead": "Mark as Read",
+      "markAsReplied": "Mark as Replied",
+      "archive": "Archive",
+      "reopen": "Reopen",
+      "deleteMessage": "Delete Message",
+      "confirmDelete": "Are you sure you want to delete this message? This cannot be undone.",
+      "toasts": {
+        "statusUpdated": "Message status updated",
+        "deleted": "Message deleted successfully",
+        "statusError": "Failed to update message status",
+        "deleteError": "Failed to delete message",
+        "fetchError": "Failed to load messages",
+        "notFound": "Message no longer exists"
+      },
+      "statusLabels": {
+        "new": "New",
+        "read": "Read",
+        "replied": "Replied",
+        "archived": "Archived"
+      },
+      "summaryStats": {
+        "title": "Overview",
+        "total": "Total",
+        "totalDesc": "messages",
+        "new": "New",
+        "newDesc": "unread",
+        "replied": "Replied",
+        "repliedDesc": "handled",
+        "archived": "Archived",
+        "archivedDesc": "stored"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "export": "Export CSV",
+        "markAllRead": "Mark All as Read",
+        "import": "Import",
+        "comingSoon": "Coming soon"
+      },
+      "emptyState": {
+        "title": "No messages yet",
+        "description": "Contact form submissions from visitors will appear here. You can filter, read, and manage inquiries.",
+        "titleFiltered": "No messages with this status",
+        "descriptionFiltered": "Try selecting a different filter above."
+      }
+    },
+    "statsSection": {
+      "title": "Statistics Section",
+      "addItem": "Add Stat Item",
+      "editItem": "Edit Stat Item",
+      "deleteItem": "Delete Item",
+      "confirmDelete": "Are you sure you want to delete this stat item?",
+      "noItems": "No stat items yet. Click \"Add Stat Item\" to create one.",
+      "fieldLabels": {
+        "icon": "Icon",
+        "target": "Target Number",
+        "suffix": "Suffix",
+        "labelEn": "Label (English)",
+        "labelAr": "Label (Arabic)"
+      },
+      "toasts": {
+        "created": "Stat item created successfully",
+        "updated": "Stat item updated successfully",
+        "deleted": "Stat item deleted successfully",
+        "reordered": "Stat items reordered successfully",
+        "createError": "Failed to create stat item",
+        "updateError": "Failed to update stat item",
+        "deleteError": "Failed to delete stat item",
+        "reorderError": "Failed to reorder stat items",
+        "fetchError": "Failed to load stat items"
+      },
+      "emptyState": "No statistics items yet",
+      "loading": "Loading stat items..."
+    },
+    "licensingSection": {
+      "title": "Licensing Section",
+      "addItem": "Add Licensing Item",
+      "editItem": "Edit Licensing Item",
+      "deleteItem": "Delete Item",
+      "confirmDelete": "Are you sure you want to delete this licensing item?",
+      "noItems": "No licensing items yet. Click \"Add Licensing Item\" to create one.",
+      "fieldLabels": {
+        "icon": "Icon",
+        "titleEn": "Title (English)",
+        "titleAr": "Title (Arabic)",
+        "descEn": "Description (English)",
+        "descAr": "Description (Arabic)",
+        "tagEn": "Tag (English)",
+        "tagAr": "Tag (Arabic)"
+      },
+      "placeholders": {
+        "icon": "e.g. FiShield",
+        "titleEn": "e.g. Commercial License",
+        "titleAr": "e.g. ترخيص تجاري",
+        "descEn": "Describe this licensing service...",
+        "descAr": "صف خدمة الترخيص هذه...",
+        "tagEn": "e.g. Popular",
+        "tagAr": "e.g. شائع"
+      },
+      "toasts": {
+        "created": "Licensing item created successfully",
+        "updated": "Licensing item updated successfully",
+        "deleted": "Licensing item deleted successfully",
+        "reordered": "Licensing items reordered successfully",
+        "createError": "Failed to create licensing item",
+        "updateError": "Failed to update licensing item",
+        "deleteError": "Failed to delete licensing item",
+        "reorderError": "Failed to reorder licensing items",
+        "fetchError": "Failed to load licensing items"
+      },
+      "emptyState": "No licensing items configured",
+      "loading": "Loading licensing items...",
+      "validation": {
+        "iconMax": "Icon must be 100 characters or less",
+        "titleMax": "Title must be 200 characters or less",
+        "descMax": "Description must be 2000 characters or less",
+        "tagMax": "Tag must be 100 characters or less"
+      }
+    },
+    "processSection": {
+      "title": "Process Section",
+      "addStep": "Add Process Step",
+      "editStep": "Edit Process Step",
+      "deleteStep": "Delete Step",
+      "confirmDelete": "Are you sure you want to delete this process step?",
+      "noSteps": "No process steps yet. Click \"Add Process Step\" to create one.",
+      "fieldLabels": {
+        "stepNumber": "Step Number",
+        "titleEn": "Title (English)",
+        "titleAr": "Title (Arabic)",
+        "descEn": "Description (English)",
+        "descAr": "Description (Arabic)"
+      },
+      "placeholders": {
+        "stepNumber": "e.g. 1",
+        "titleEn": "e.g. Submit Application",
+        "titleAr": "e.g. تقديم الطلب",
+        "descEn": "Describe this step...",
+        "descAr": "صف هذه الخطوة..."
+      },
+      "toasts": {
+        "created": "Process step created successfully",
+        "updated": "Process step updated successfully",
+        "deleted": "Process step deleted successfully",
+        "reordered": "Process steps reordered successfully",
+        "createError": "Failed to create process step",
+        "updateError": "Failed to update process step",
+        "deleteError": "Failed to delete process step",
+        "reorderError": "Failed to reorder process steps",
+        "fetchError": "Failed to load process steps"
+      },
+      "emptyState": "No process steps configured",
+      "loading": "Loading process steps...",
+      "validation": {
+        "stepNumberRequired": "Step number is required",
+        "stepNumberMin": "Step number must be at least 1",
+        "titleMax": "Title must be 200 characters or less",
+        "descMax": "Description must be 2000 characters or less"
+      }
+    },
+    "services": {
+      "title": "Services Management",
+      "addService": "Add Service",
+      "editService": "Edit Service",
+      "deleteService": "Delete Service",
+      "confirmDelete": "Are you sure you want to delete this service?",
+      "noServices": "No services yet. Click \"Add Service\" to create one.",
+      "filterAll": "All",
+      "filterActive": "Active",
+      "filterInactive": "Inactive",
+      "fieldLabels": {
+        "icon": "Icon",
+        "titleEn": "Title (English)",
+        "titleAr": "Title (Arabic)",
+        "descEn": "Description (English)",
+        "descAr": "Description (Arabic)",
+        "buttonLabelEn": "Button Label (English)",
+        "buttonLabelAr": "Button Label (Arabic)",
+        "metricValue": "Metric Value",
+        "metricSuffix": "Metric Suffix",
+        "metricLabelEn": "Metric Label (English)",
+        "metricLabelAr": "Metric Label (Arabic)",
+        "isActive": "Active"
+      },
+      "placeholders": {
+        "icon": "e.g. FiUsers",
+        "titleEn": "e.g. Commercial Licensing",
+        "titleAr": "e.g. الترخيص التجاري",
+        "descEn": "Describe this service...",
+        "descAr": "صف هذه الخدمة...",
+        "buttonLabelEn": "e.g. Learn More",
+        "buttonLabelAr": "e.g. اعرف المزيد",
+        "metricValue": "e.g. 500",
+        "metricSuffix": "e.g. +",
+        "metricLabelEn": "e.g. Projects Completed",
+        "metricLabelAr": "e.g. مشروع مكتمل"
+      },
+      "toasts": {
+        "created": "Service created successfully",
+        "updated": "Service updated successfully",
+        "deleted": "Service deleted successfully",
+        "toggled": "Service status updated",
+        "reordered": "Services reordered successfully",
+        "createError": "Failed to create service",
+        "updateError": "Failed to update service",
+        "deleteError": "Failed to delete service",
+        "reorderError": "Failed to reorder services",
+        "fetchError": "Failed to load services"
+      },
+      "emptyState": "No services configured",
+      "loading": "Loading services...",
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page"
+      },
+      "validation": {
+        "iconMax": "Icon must be 100 characters or less",
+        "titleMax": "Title must be 200 characters or less",
+        "descMax": "Description must be 2000 characters or less",
+        "buttonLabelMax": "Button label must be 100 characters or less",
+        "metricValueMax": "Metric value must be 100 characters or less",
+        "metricSuffixMax": "Metric suffix must be 20 characters or less",
+        "metricLabelMax": "Metric label must be 200 characters or less"
+      },
+      "actions": {
+        "backToDashboard": "Back to Dashboard",
+        "retry": "Retry"
+      },
+      "filters": {
+        "searchPlaceholder": "Search services...",
+        "sortByNameAsc": "Name A-Z",
+        "sortByNameDesc": "Name Z-A",
+        "sortByOrder": "Sort Order",
+        "sortByStatusActive": "Active first",
+        "sortByStatusInactive": "Inactive first"
+      },
+      "dialogs": {
+        "confirmDelete": "Are you sure you want to delete this service?",
+        "cannotBeUndone": "This action cannot be undone."
+      },
+      "picker": {
+        "title": "Choose Icon",
+        "searchPlaceholder": "Search icons...",
+        "noResults": "No icons found",
+        "close": "Close"
+      }
+    },
+    "countries": {
+      "title": "Countries Management",
+      "addCountry": "Add Country",
+      "editCountry": "Edit Country",
+      "deleteCountry": "Delete Country",
+      "confirmDelete": "Are you sure you want to delete this country?",
+      "noCountries": "No countries yet. Click \"Add Country\" to create one.",
+      "filterAll": "All",
+      "filterAsia": "Asia",
+      "filterAfrica": "Africa",
+      "filterActive": "Active",
+      "filterInactive": "Inactive",
+      "regionLabels": {
+        "asia": "Asia",
+        "africa": "Africa"
+      },
+      "fieldLabels": {
+        "flagEmoji": "Flag Emoji",
+        "nameEn": "Name (English)",
+        "nameAr": "Name (Arabic)",
+        "specialty": "Specialty",
+        "region": "Region",
+        "workersLabel": "Workers Label",
+        "isActive": "Active"
+      },
+      "placeholders": {
+        "flagEmoji": "e.g. 🇸🇦",
+        "nameEn": "e.g. Saudi Arabia",
+        "nameAr": "e.g. المملكة العربية السعودية",
+        "specialty": "e.g. Commercial licensing hub",
+        "workersLabel": "e.g. 500+ workers"
+      },
+      "regionOptions": {
+        "asia": "Asia",
+        "africa": "Africa",
+        "none": "None"
+      },
+      "toasts": {
+        "created": "Country created successfully",
+        "updated": "Country updated successfully",
+        "deleted": "Country deleted successfully",
+        "toggled": "Country status updated",
+        "reordered": "Countries reordered successfully",
+        "createError": "Failed to create country",
+        "updateError": "Failed to update country",
+        "deleteError": "Failed to delete country",
+        "reorderError": "Failed to reorder countries",
+        "fetchError": "Failed to load countries"
+      },
+      "emptyState": "No countries configured",
+      "loading": "Loading countries...",
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page"
+      },
+      "validation": {
+        "flagEmojiMax": "Flag emoji must be 10 characters or less",
+        "nameMax": "Name must be 200 characters or less",
+        "specialtyMax": "Specialty must be 500 characters or less",
+        "workersLabelMax": "Workers label must be 200 characters or less",
+        "invalidRegion": "Region must be 'asia' or 'africa'"
+      },
+      "tableHeaders": {
+        "flag": "Flag",
+        "name": "Name",
+        "region": "Region",
+        "specialty": "Specialty",
+        "workers": "Workers",
+        "order": "Order",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "errorState": {
+        "retry": "Retry"
+      }
+    },
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Sign in to access the admin panel",
+      "emailLabel": "Email",
+      "emailPlaceholder": "admin@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Sign In",
+      "submitting": "Signing in..."
     }
   }
 }

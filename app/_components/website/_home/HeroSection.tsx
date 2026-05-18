@@ -1,16 +1,16 @@
 "use client";
 
-import { useLocale } from "@/app/hooks/useLocale";
-import { useTranslation } from "@/app/hooks/useTranslation";
 import { FiStar, FiShield, FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import Button from "@/app/_components/website/Button";
+import type { HeroApiResponse, Locale } from "@/app/types/website/home.types";
 
-export default function HeroSection() {
-  const locale = useLocale();
-  const t = useTranslation("home");
-  const hero = t?.hero;
+interface HeroSectionProps {
+  hero: HeroApiResponse;
+  locale: Locale;
+}
 
+export default function HeroSection({ hero, locale }: HeroSectionProps) {
   if (!hero) return null;
 
   return (
@@ -22,7 +22,7 @@ export default function HeroSection() {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url(${locale === "ar" ? "/hero-image-RTL.webp" : "/Hero-image.webp"})`,
+            backgroundImage: `url(${hero.background_image ?? (locale === "ar" ? "/hero-image-RTL.webp" : "/Hero-image.webp")})`,
           }}
         />
         <div className="bg-[#1E1E1E]/50 absolute inset-0 w-full h-full" />
@@ -32,24 +32,27 @@ export default function HeroSection() {
         <div className="hero-entrance xl:rtl:text-right xl:ltr:text-left text-center">
           <div className="inline-flex items-center gap-2 bg-gold/12 border border-gold/25 rounded-full px-4 md:px-6 py-2 text-sm font-semibold text-gold-light mb-6 md:mb-8">
             <FiStar className="w-4 h-4 fill-gold" />
-            <span>{hero.badge?.[locale]}</span>
+            <span>{hero.badge}</span>
           </div>
 
-          <h1
-            className="text-[clamp(2rem,7vw,5rem)] font-black leading-[1.1] text-white mb-3 md:mb-4 tracking-[-0.02em] hero-heading"
-            dangerouslySetInnerHTML={{ __html: hero.heading?.[locale] ?? "" }}
-          />
+          <h1 className="text-[clamp(2rem,7vw,5rem)] font-black leading-[1.1] text-white mb-3 md:mb-4 tracking-[-0.02em] hero-heading">
+            {hero.heading}
+            {hero.highlight_text && (
+              <>
+                {" "}
+                <span className="highlight">{hero.highlight_text}</span>
+              </>
+            )}
+          </h1>
 
           <p
             className="text-[clamp(0.95rem,1.5vw,1.2rem)] text-white/80 leading-relaxed mb-6 md:mb-8 max-w-160 mx-auto xl:mx-0 font-normal"
-            dangerouslySetInnerHTML={{ __html: hero.description?.[locale] ?? "" }}
+            dangerouslySetInnerHTML={{ __html: hero.description ?? "" }}
           />
 
-          <div className="inline-flex items-center gap-2.5 md:gap-3.5 flex-wrap px-4 md:px-6 py-3 md:py-4 bg-white/8 rounded-xl md:rounded-2xl border border-gold/15 mb-8 md:mb-10 w-full md:w-auto justify-center">
+          <div className="inline-flex items-center gap-2.5 md:gap-3.5 flex-wrap px-4 md:px-6 py-3 md:py-4 bg-white/8 rounded-xl md:rounded-2xl border border-gold/15 mb-8 md:mb-10 w-full md:w-fit justify-center">
             <FiShield className="w-5 h-5 fill-gold shrink-0" />
-            <p className="text-sm m-0 text-white/82">
-              {hero.license?.[locale]}
-            </p>
+            <p className="text-sm m-0 text-white/82">{hero.license}</p>
           </div>
 
           <div className="flex gap-3 md:gap-4 flex-col sm:flex-row w-full sm:w-fit max-xl:mx-auto">
@@ -58,16 +61,16 @@ export default function HeroSection() {
               href="#contact"
               icon={<FiMail className="w-5 h-5" />}
             >
-              {hero.ctaPrimary?.[locale]}
+              {hero.cta_primary}
             </Button>
             <Button
               variant="whatsapp"
-              href="https://wa.me/966XXXXXXXXX"
+              href={`https://wa.me/${hero.whatsapp_number ?? "966XXXXXXXXX"}`}
               target="_blank"
               rel="noopener noreferrer"
               icon={<FaWhatsapp className="w-5 h-5" />}
             >
-              {hero.ctaWhatsapp?.[locale]}
+              {hero.cta_whatsapp}
             </Button>
           </div>
         </div>

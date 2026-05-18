@@ -1,22 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Cairo, Inter } from "next/font/google";
 import { directionMap } from "@/constants/global";
-import { ReactNode } from "react";
-import Navbar from "../_components/website/_home/Navbar";
-import Footer from "../_components/website/_home/Footer";
-import FloatingWhatsApp from "../_components/website/_home/FloatingWhatsApp";
+import { Tajawal, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "sonner";
+import ClientShell from "../_components/website/ClientShell";
+import { ErrorBoundary } from "../_components/website/ErrorBoundary";
+import { ReactNode } from "react";
 
-const cairo = Cairo({
+const tajawal = Tajawal({
   subsets: ["arabic"],
-  variable: "--font-cairo",
+  variable: "--font-tajawal",
   display: "swap",
+  weight: ["300", "400", "500", "700", "800"],
 });
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-plus-jakarta",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 interface RootLayoutProps {
@@ -29,16 +30,16 @@ export default async function RootLayout({
   params,
 }: RootLayoutProps) {
   const { locale = "ar" } = await params;
-  const fontClass = locale === "ar" ? cairo.variable : inter.variable;
+  const fontClass =
+    locale === "ar" ? tajawal.variable : plusJakartaSans.variable;
 
   return (
     <html lang={locale} dir={directionMap[locale]}>
       <body className={`${fontClass} antialiased`}>
-        <Navbar />
-        {children}
-        <Toaster position="top-center" richColors closeButton />
-        <FloatingWhatsApp />
-        <Footer />
+        <ErrorBoundary>
+          <ClientShell>{children}</ClientShell>
+          <Toaster position="top-center" richColors closeButton />
+        </ErrorBoundary>
       </body>
     </html>
   );

@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/static-components */
 "use client";
 import { useRouter } from "next/navigation";
 import { motion, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import Icon from "../Icon";
+import { getIcon } from "@/app/helpers/getIcon";
+import { FaGlobe } from "react-icons/fa6";
 
 export default function ServiceCard({
   icon,
@@ -22,6 +24,7 @@ export default function ServiceCard({
   index: number;
 }) {
   const router = useRouter();
+  const Icon = getIcon(icon) ?? FaGlobe; // Get the icon component based on the name
 
   return (
     <motion.div
@@ -37,7 +40,7 @@ export default function ServiceCard({
 
       <div className="flex items-center justify-between mb-5">
         <div className="w-12 h-12 shrink-0 rounded-2xl bg-gold/10 flex items-center justify-center transition-all duration-300 ease-out group-hover:bg-gold/20 group-hover:scale-105">
-          <Icon name={icon} className="w-6 h-6 text-gold transition-all duration-300 ease-out group-hover:text-green-dark" />
+          <Icon className="w-6 h-6 text-gold transition-all duration-300 ease-out group-hover:text-green-dark" />
         </div>
         {metric && <MetricDisplay metric={metric} />}
       </div>
@@ -58,13 +61,17 @@ export default function ServiceCard({
         <span className="transition-all duration-300 ease-out group-hover:-translate-x-0.5">
           {buttonLabel}
         </span>
-        <Icon name="FiArrowRight" className="w-4 h-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-0.5 opacity-0 -translate-x-1 group-hover:opacity-100" />
+        <Icon className="w-4 h-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-0.5 opacity-0 -translate-x-1 group-hover:opacity-100" />
       </motion.button>
     </motion.div>
   );
 }
 
-function MetricDisplay({ metric }: { metric: { value: number; suffix: string; label: string } }) {
+function MetricDisplay({
+  metric,
+}: {
+  metric: { value: number; suffix: string; label: string };
+}) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [count, setCount] = useState(0);

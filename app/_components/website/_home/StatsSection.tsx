@@ -1,10 +1,13 @@
 "use client";
 
-import { useLocale } from "@/app/hooks/useLocale";
-import { useTranslation } from "@/app/hooks/useTranslation";
 import { useCounterAnimation } from "@/app/hooks/home/useCounterAnimation";
 import { useScrollReveal } from "@/app/hooks/home/useScrollReveal";
 import Icon from "@/app/_components/website/Icon";
+import type { StatsSectionApiResponse } from "@/app/types/website/home.types";
+
+interface StatsSectionProps {
+  stats: StatsSectionApiResponse;
+}
 
 function StatCard({
   icon,
@@ -39,10 +42,7 @@ function StatCard({
   );
 }
 
-export default function StatsSection() {
-  const locale = useLocale();
-  const t = useTranslation("home");
-  const stats = t?.stats;
+export default function StatsSection({ stats }: StatsSectionProps) {
   const { ref: staggerRef, isVisible: staggerVisible } = useScrollReveal();
 
   if (!stats) return null;
@@ -51,24 +51,23 @@ export default function StatsSection() {
     <section className="py-[clamp(60px,8vw,120px)] bg-sand" id="about">
       <div className="w-[min(1200px,100%-48px)] mx-auto">
         <span className="inline-block text-xs font-bold uppercase tracking-[0.12em] text-gold mb-3">
-          {stats.label?.[locale]}
+          {stats.label}
         </span>
         <h2 className="text-[clamp(2rem,3.5vw,3.2rem)] font-extrabold leading-[1.12] mb-3 tracking-[-0.01em] text-charcoal">
-          {stats.heading?.[locale]}
+          {stats.heading}
         </h2>
         <p className="text-lg text-muted max-w-prose mb-12 leading-relaxed">
-          {stats.description?.[locale]}
+          {stats.description}
         </p>
 
         <div ref={staggerRef} className={`reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ${staggerVisible ? "visible" : ""}`}>
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {stats.items?.map((item: any) => (
+          {stats.items?.map((item) => (
             <StatCard
-              key={item.icon}
-              icon={item.icon}
-              target={item.target}
-              suffix={item.suffix}
-              label={item.label[locale]}
+              key={item.icon ?? ""}
+              icon={item.icon ?? ""}
+              target={item.target ?? 0}
+              suffix={item.suffix ?? ""}
+              label={item.label ?? ""}
             />
           ))}
         </div>

@@ -1,18 +1,29 @@
 "use client";
 
-import { useLocale } from "@/app/hooks/useLocale";
 import { useTranslation } from "@/app/hooks/useTranslation";
 import { useContactForm } from "@/app/hooks/home/useContactForm";
 import SectionLabel from "@/app/_components/website/SectionLabel";
 import { FiPhone, FiMail, FiClock } from "react-icons/fi";
+import type {
+  PublicServiceApiResponse,
+  PublicCountryApiResponse,
+  Locale,
+} from "@/app/types/website/home.types";
 
-export default function ContactSection() {
-  const locale = useLocale();
+interface ContactSectionProps {
+  services: PublicServiceApiResponse[];
+  countries: PublicCountryApiResponse[];
+  locale: Locale;
+}
+
+export default function ContactSection({
+  services,
+  countries,
+  locale,
+}: ContactSectionProps) {
   const t = useTranslation("home");
   const contact = t?.contact;
-  const services = t?.services?.items;
-  const countries = t?.countries?.items;
-  const { formData, errors, status, updateField, submit, resetStatus } =
+  const { formData, errors, status, updateField, submit } =
     useContactForm(t, locale);
 
   if (!contact) return null;
@@ -24,11 +35,15 @@ export default function ContactSection() {
 
   const isRtl = locale === "ar";
 
+  const rateLimitMessage = contact.form?.rateLimit?.[locale] ??
+    (isRtl ? "محاولات كثيرة جداً، يرجى المحاولة لاحقاً" : "Too many attempts. Please try again later.");
+
   return (
     <section
       className="py-[clamp(88px,12vw,160px)] bg-sand"
       id="contact"
       dir={isRtl ? "rtl" : "ltr"}
+      data-testid="contact-section"
     >
       <div className="w-[min(1200px,100%-48px)] mx-auto">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
@@ -58,7 +73,7 @@ export default function ContactSection() {
                 <span className="w-10 h-10 rounded-xl bg-green/10 flex items-center justify-center shrink-0">
                   <FiClock className="w-4.5 h-4.5 text-green" />
                 </span>
-                <span>{isRtl ? "رد خلال ٢٤ ساعة" : "24h response time"}</span>
+                <span>{contact.responseTime?.[locale] ?? (isRtl ? "رد خلال ٢٤ ساعة" : "24h response time")}</span>
               </div>
             </div>
           </div>
@@ -78,6 +93,7 @@ export default function ContactSection() {
                     errors.name ? "border-red-400" : "border-border focus:border-green"
                   }`}
                   dir={isRtl ? "rtl" : "ltr"}
+                  data-testid="contact-form-name"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-xs mt-1.5">{errors.name}</p>
@@ -100,6 +116,7 @@ export default function ContactSection() {
                         : "border-border focus:border-green"
                     }`}
                     dir="ltr"
+                    data-testid="contact-form-email"
                   />
                   {errors.email && (
                     <p className="text-red-500 text-xs mt-1.5">
@@ -122,6 +139,7 @@ export default function ContactSection() {
                         : "border-border focus:border-green"
                     }`}
                     dir="ltr"
+                    data-testid="contact-form-phone"
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-xs mt-1.5">
@@ -145,13 +163,14 @@ export default function ContactSection() {
                         : "border-border focus:border-green"
                     }`}
                     dir={isRtl ? "rtl" : "ltr"}
+                    data-testid="contact-form-service"
                   >
                     <option value="">
                       {contact.form.servicePlaceholder[locale]}
                     </option>
-                    {services?.map((s: any) => (
-                      <option key={s.icon} value={s.title.en}>
-                        {s.title[locale]}
+                    {services?.map((s) => (
+                      <option key={s.id} value={s.title ?? ""}>
+                        {s.title}
                       </option>
                     ))}
                   </select>
@@ -174,13 +193,14 @@ export default function ContactSection() {
                         : "border-border focus:border-green"
                     }`}
                     dir={isRtl ? "rtl" : "ltr"}
+                    data-testid="contact-form-country"
                   >
                     <option value="">
                       {contact.form.countryPlaceholder[locale]}
                     </option>
-                    {countries?.map((c: any) => (
-                      <option key={c.flag} value={c.name.en}>
-                        {c.flag} {c.name[locale]}
+                    {countries?.map((c) => (
+                      <option key={c.id} value={c.name ?? ""}>
+                        {c.flag_emoji} {c.name}
                       </option>
                     ))}
                   </select>
@@ -203,13 +223,15 @@ export default function ContactSection() {
                   rows={3}
                   className="w-full px-4 py-3 rounded-xl border border-border bg-bg text-charcoal text-sm transition-all duration-200 focus:border-green focus:ring-2 focus:ring-green/20 resize-none"
                   dir={isRtl ? "rtl" : "ltr"}
+                  data-testid="contact-form-message"
                 />
               </div>
 
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={status === "loading" || status === "rateLimited"}
                 className="w-full bg-green text-white text-sm font-bold py-3.5 px-6 rounded-xl transition-all duration-300 hover:bg-green-dark active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+                data-testid="contact-form-submit"
               >
                 {status === "loading"
                   ? contact.form.sending[locale]
@@ -217,13 +239,18 @@ export default function ContactSection() {
               </button>
 
               {status === "success" && (
-                <div className="mt-4 p-3.5 rounded-xl bg-green/8 border border-green/20 text-green-dark text-sm text-center font-medium">
+                <div className="mt-4 p-3.5 rounded-xl bg-green/8 border border-green/20 text-green-dark text-sm text-center font-medium" data-testid="contact-form-success">
                   {contact.form.success[locale]}
                 </div>
               )}
               {status === "error" && (
-                <div className="mt-4 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm text-center font-medium">
+                <div className="mt-4 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm text-center font-medium" data-testid="contact-form-error">
                   {contact.form.error[locale]}
+                </div>
+              )}
+              {status === "rateLimited" && (
+                <div className="mt-4 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm text-center font-medium" data-testid="contact-form-rate-limited">
+                  {rateLimitMessage}
                 </div>
               )}
             </form>

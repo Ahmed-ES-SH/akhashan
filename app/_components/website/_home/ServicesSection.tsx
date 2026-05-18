@@ -1,46 +1,52 @@
 "use client";
 
-import { useLocale } from "@/app/hooks/useLocale";
-import { useTranslation } from "@/app/hooks/useTranslation";
 import SectionLabel from "@/app/_components/website/SectionLabel";
 import ServiceCard from "./ServiceCard";
+import type {
+  SectionHeaderApiResponse,
+  PublicServiceApiResponse,
+  Locale,
+} from "@/app/types/website/home.types";
 
-export default function ServicesSection() {
-  const locale = useLocale();
-  const t = useTranslation("home");
-  const services = t?.services;
+interface ServicesSectionProps {
+  servicesHeader: SectionHeaderApiResponse;
+  services: PublicServiceApiResponse[];
+  locale: Locale;
+}
 
-  if (!services) return null;
-
+export default function ServicesSection({
+  servicesHeader,
+  services,
+  locale,
+}: ServicesSectionProps) {
   return (
     <section className="py-[clamp(88px,12vw,160px)] bg-sand" id="services">
       <div className="w-[min(1200px,100%-48px)] mx-auto">
-        <SectionLabel>{services.label?.[locale]}</SectionLabel>
+        <SectionLabel>{servicesHeader.label}</SectionLabel>
         <h2 className="text-[clamp(2rem,3.5vw,3.2rem)] font-extrabold leading-[1.12] mb-3 tracking-[-0.01em] text-charcoal">
-          {services.heading?.[locale]}
+          {servicesHeader.heading}
         </h2>
         <p className="text-lg text-muted max-w-prose mb-12 leading-relaxed">
-          {services.description?.[locale]}
+          {servicesHeader.description}
         </p>
 
         <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-5">
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {services.items?.map((item: any, index: number) => (
+          {services?.map((item, index) => (
             <ServiceCard
-              key={item.icon + item.title.en}
-              icon={item.icon}
-              title={item.title[locale]}
-              desc={item.desc[locale]}
+              key={item.id}
+              icon={item.icon ?? ""}
+              title={item.title ?? ""}
+              desc={item.desc ?? ""}
               metric={
-                item.metric
+                item.metric_value
                   ? {
-                      value: item.metric.value,
-                      suffix: item.metric.suffix,
-                      label: item.metric.label[locale],
+                      value: parseInt(item.metric_value, 10) || 0,
+                      suffix: item.metric_suffix ?? "",
+                      label: item.metric_label ?? "",
                     }
                   : undefined
               }
-              buttonLabel={item.buttonLabel?.[locale] ?? "Order Service"}
+              buttonLabel={item.button_label ?? ""}
               locale={locale}
               index={index}
             />
