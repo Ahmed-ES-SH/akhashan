@@ -76,7 +76,10 @@
     },
     "stats": {
       "label": { "en": "Our Numbers", "ar": "إحصائياتنا" },
-      "heading": { "en": "Numbers That Speak of Trust", "ar": "أرقام تتحدث عن الثقة" },
+      "heading": {
+        "en": "Numbers That Speak of Trust",
+        "ar": "أرقام تتحدث عن الثقة"
+      },
       "description": {
         "en": "Years of experience and commitment in global manpower recruitment — serving clients across the Kingdom.",
         "ar": "سنوات من الخبرة والالتزام في مجال استقدام العمالة حول العالم"
@@ -110,7 +113,10 @@
     },
     "services": {
       "label": { "en": "What We Offer", "ar": "خدماتنا" },
-      "heading": { "en": "Comprehensive Recruitment Solutions", "ar": "حلول استقدام شاملة" },
+      "heading": {
+        "en": "Comprehensive Recruitment Solutions",
+        "ar": "حلول استقدام شاملة"
+      },
       "description": {
         "en": "From domestic staffing to corporate workforce solutions — we cover the full spectrum of recruitment needs.",
         "ar": "من العمالة المنزلية إلى حلول القوى العاملة للشركات — نغطي جميع احتياجات الاستقدام"
@@ -118,109 +124,182 @@
       "items": [
         {
           "icon": "FiUsers",
-          "title": { "en": "Domestic Worker Recruitment", "ar": "استقدام العمالة المنزلية" },
+          "title": {
+            "en": "Domestic Worker Recruitment",
+            "ar": "استقدام العمالة المنزلية"
+          },
           "desc": {
             "en": "Reliable domestic staffing solutions including maids, drivers, nannies, and cooks sourced from top-tier agencies worldwide.",
             "ar": "حلول موثوقة للعمالة المنزلية تشمل الخادمات والسائقين والمربيات والطهاة من أفضل الوكالات حول العالم"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 500, "suffix": "+", "label": { "en": "placements/year", "ar": "توظيف/سنوياً" } }
+          "metric": {
+            "value": 500,
+            "suffix": "+",
+            "label": { "en": "placements/year", "ar": "توظيف/سنوياً" }
+          }
         },
         {
           "icon": "FiBriefcase",
-          "title": { "en": "Corporate Workforce Solutions", "ar": "حلول القوى العاملة للشركات" },
+          "title": {
+            "en": "Corporate Workforce Solutions",
+            "ar": "حلول القوى العاملة للشركات"
+          },
           "desc": {
             "en": "End-to-end corporate staffing solutions for factories, warehouses, and logistics — we match qualified workers to your operational needs.",
             "ar": "حلول توظيف مؤسسية متكاملة للمصانع والمستودعات والخدمات اللوجستية — نوفر عمالة مؤهلة لاحتياجاتك التشغيلية"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 3000, "suffix": "+", "label": { "en": "workers placed", "ar": "عامل تم توظيفهم" } }
+          "metric": {
+            "value": 3000,
+            "suffix": "+",
+            "label": { "en": "workers placed", "ar": "عامل تم توظيفهم" }
+          }
         },
         {
           "icon": "FiHeart",
-          "title": { "en": "Medical Staff Recruitment", "ar": "استقدام الكوادر الطبية" },
+          "title": {
+            "en": "Medical Staff Recruitment",
+            "ar": "استقدام الكوادر الطبية"
+          },
           "desc": {
             "en": "Qualified doctors, nurses, lab technicians, and healthcare professionals sourced from accredited international institutions.",
             "ar": "أطباء وممرضون وفنيو مختبرات وكوادر صحية مؤهلة من مؤسسات معتمدة حول العالم"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 200, "suffix": "+", "label": { "en": "professionals placed", "ar": "كادر طبي" } }
+          "metric": {
+            "value": 200,
+            "suffix": "+",
+            "label": { "en": "professionals placed", "ar": "كادر طبي" }
+          }
         },
         {
           "icon": "FiTool",
-          "title": { "en": "Engineers & Technicians", "ar": "استقدام المهندسين والفنيين" },
+          "title": {
+            "en": "Engineers & Technicians",
+            "ar": "استقدام المهندسين والفنيين"
+          },
           "desc": {
             "en": "Civil, mechanical, electrical, and IT engineers as well as specialized technicians for your industrial and development projects.",
             "ar": "مهندسون مدنيون وميكانيكيون وكهربائيون وتقنية معلومات بالإضافة إلى فنيين متخصصين لمشاريعك الصناعية والتطويرية"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 150, "suffix": "+", "label": { "en": "specialists placed", "ar": "متخصص" } }
+          "metric": {
+            "value": 150,
+            "suffix": "+",
+            "label": { "en": "specialists placed", "ar": "متخصص" }
+          }
         },
         {
           "icon": "FiTruck",
-          "title": { "en": "Construction & Labor Recruitment", "ar": "استقدام عمال البناء والمقاولات" },
+          "title": {
+            "en": "Construction & Labor Recruitment",
+            "ar": "استقدام عمال البناء والمقاولات"
+          },
           "desc": {
             "en": "Skilled and semi-skilled construction workers, heavy equipment operators, and general laborers for large-scale projects.",
             "ar": "عمال بناء ماهرون وشبه ماهرون ومشغلو معدات ثقيلة وعمال عامون للمشاريع الكبرى"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 5000, "suffix": "+", "label": { "en": "laborers supplied", "ar": "عامل" } }
+          "metric": {
+            "value": 5000,
+            "suffix": "+",
+            "label": { "en": "laborers supplied", "ar": "عامل" }
+          }
         },
         {
           "icon": "FiAward",
-          "title": { "en": "Hospitality & Tourism Staffing", "ar": "استقدام عمال الضيافة والسياحة" },
+          "title": {
+            "en": "Hospitality & Tourism Staffing",
+            "ar": "استقدام عمال الضيافة والسياحة"
+          },
           "desc": {
             "en": "Professional staff for hotels, restaurants, and tourism sectors — from front-of-house to management and culinary experts.",
             "ar": "كوادر مهنية للفنادق والمطاعم والقطاع السياحي — من موظفي الاستقبال إلى الإدارة وخبراء الطهي"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 400, "suffix": "+", "label": { "en": "staff placed", "ar": "موظف" } }
+          "metric": {
+            "value": 400,
+            "suffix": "+",
+            "label": { "en": "staff placed", "ar": "موظف" }
+          }
         },
         {
           "icon": "FiSun",
-          "title": { "en": "Agricultural Workers", "ar": "استقدام العمالة الزراعية" },
+          "title": {
+            "en": "Agricultural Workers",
+            "ar": "استقدام العمالة الزراعية"
+          },
           "desc": {
             "en": "Experienced farm workers, livestock handlers, and irrigation specialists for agricultural operations of all scales.",
             "ar": "عمال زراعيون ذوو خبرة ومربو مواشي ومتخصصو ري للعمليات الزراعية بمختلف أحجامها"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 200, "suffix": "+", "label": { "en": "farms served", "ar": "مزرعة" } }
+          "metric": {
+            "value": 200,
+            "suffix": "+",
+            "label": { "en": "farms served", "ar": "مزرعة" }
+          }
         },
         {
           "icon": "FiCalendar",
-          "title": { "en": "Seasonal & Contract Staffing", "ar": "استقدام العمالة الموسمية" },
+          "title": {
+            "en": "Seasonal & Contract Staffing",
+            "ar": "استقدام العمالة الموسمية"
+          },
           "desc": {
             "en": "Flexible staffing solutions for seasonal demand, project-based work, and fixed-term contracts across all industries.",
             "ar": "حلول توظيف مرنة للطلب الموسمي والأعمال القائمة على المشاريع والعقود محددة المدة في جميع القطاعات"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 1000, "suffix": "+", "label": { "en": "contracts fulfilled", "ar": "عقد" } }
+          "metric": {
+            "value": 1000,
+            "suffix": "+",
+            "label": { "en": "contracts fulfilled", "ar": "عقد" }
+          }
         },
         {
           "icon": "FiGlobe",
-          "title": { "en": "Specialized Executive Recruitment", "ar": "استقدام الكوادر التنفيذية المتخصصة" },
+          "title": {
+            "en": "Specialized Executive Recruitment",
+            "ar": "استقدام الكوادر التنفيذية المتخصصة"
+          },
           "desc": {
             "en": "Senior management, executive roles, and niche specialist positions sourced from a global network of qualified professionals.",
             "ar": "إدارة عليا ومناصب تنفيذية وتخصصات دقيقة من شبكة عالمية من المحترفين المؤهلين"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 50, "suffix": "+", "label": { "en": "executives placed", "ar": "تنفيذي" } }
+          "metric": {
+            "value": 50,
+            "suffix": "+",
+            "label": { "en": "executives placed", "ar": "تنفيذي" }
+          }
         },
         {
           "icon": "FiShield",
-          "title": { "en": "Visa & Documentation Services", "ar": "خدمات التأشيرات والتوثيق" },
+          "title": {
+            "en": "Visa & Documentation Services",
+            "ar": "خدمات التأشيرات والتوثيق"
+          },
           "desc": {
             "en": "Full-service visa processing, work permit documentation, and government clearance managed end-to-end by our compliance team.",
             "ar": "إجراءات تأشيرات وتوثيق تصاريح العمل والموافقات الحكومية بشكل متكامل عبر فريق الامتثال لدينا"
           },
           "buttonLabel": { "en": "Order Service", "ar": "اطلب الخدمة" },
-          "metric": { "value": 5000, "suffix": "+", "label": { "en": "visas processed", "ar": "تأشيرة" } }
+          "metric": {
+            "value": 5000,
+            "suffix": "+",
+            "label": { "en": "visas processed", "ar": "تأشيرة" }
+          }
         }
       ]
     },
     "process": {
       "label": { "en": "How It Works", "ar": "كيف نعمل" },
-      "heading": { "en": "Simple, Transparent Process", "ar": "عملية بسيطة وشفافة" },
+      "heading": {
+        "en": "Simple, Transparent Process",
+        "ar": "عملية بسيطة وشفافة"
+      },
       "description": {
         "en": "From your request to worker arrival — we manage every step with care and professionalism.",
         "ar": "من طلبك إلى وصول العامل — ندير كل خطوة بعناية واحترافية"
@@ -229,41 +308,104 @@
         {
           "num": 1,
           "title": { "en": "Submit Request", "ar": "تقديم الطلب" },
-          "desc": { "en": "Tell us your requirements — we'll help you choose the right profile.", "ar": "أخبرنا بمتطلباتك — وسنساعدك في اختيار المرشح المناسب" }
+          "desc": {
+            "en": "Tell us your requirements — we'll help you choose the right profile.",
+            "ar": "أخبرنا بمتطلباتك — وسنساعدك في اختيار المرشح المناسب"
+          }
         },
         {
           "num": 2,
           "title": { "en": "Select Candidates", "ar": "اختيار المرشحين" },
-          "desc": { "en": "Browse and select from pre-vetted candidates matched to your needs.", "ar": "تصفح واختر من بين المرشحين المعتمدين المطابقين لاحتياجاتك" }
+          "desc": {
+            "en": "Browse and select from pre-vetted candidates matched to your needs.",
+            "ar": "تصفح واختر من بين المرشحين المعتمدين المطابقين لاحتياجاتك"
+          }
         },
         {
           "num": 3,
           "title": { "en": "Visa & Processing", "ar": "التأشيرة والإجراءات" },
-          "desc": { "en": "We handle all visa paperwork, government approvals, and travel arrangements.", "ar": "نتولى جميع أوراق التأشيرة والموافقات الحكومية وترتيبات السفر" }
+          "desc": {
+            "en": "We handle all visa paperwork, government approvals, and travel arrangements.",
+            "ar": "نتولى جميع أوراق التأشيرة والموافقات الحكومية وترتيبات السفر"
+          }
         },
         {
           "num": 4,
           "title": { "en": "Arrival & Handover", "ar": "القدوم والتسليم" },
-          "desc": { "en": "Worker arrives, we handle orientation and post-placement follow-up.", "ar": "يصل العامل ونتولى التوجيه والمتابعة بعد التسليم" }
+          "desc": {
+            "en": "Worker arrives, we handle orientation and post-placement follow-up.",
+            "ar": "يصل العامل ونتولى التوجيه والمتابعة بعد التسليم"
+          }
         }
       ]
     },
     "countries": {
       "label": { "en": "Source Countries", "ar": "الدول المصدرة" },
-      "heading": { "en": "Global Reach, Local Expertise", "ar": "انتشار عالمي وخبرة محلية" },
+      "heading": {
+        "en": "Global Reach, Local Expertise",
+        "ar": "انتشار عالمي وخبرة محلية"
+      },
       "description": {
         "en": "We partner with trusted agencies across 15+ countries to bring you the best talent from around the world.",
         "ar": "نحن نتعاون مع وكالات موثوقة في أكثر من ١٥ دولة لتقديم أفضل الكفاءات من جميع أنحاء العالم"
       },
       "items": [
-        { "flag": "🇵🇭", "name": { "en": "Philippines", "ar": "الفلبين" }, "specialty": "Domestic Workers & Healthcare", "region": "asia", "workersLabel": "15+ year partnership" },
-        { "flag": "🇧🇩", "name": { "en": "Bangladesh", "ar": "بنغلاديش" }, "specialty": "Construction & Industrial Labor", "region": "asia", "workersLabel": "10+ year partnership" },
-        { "flag": "🇱🇰", "name": { "en": "Sri Lanka", "ar": "سريلانكا" }, "specialty": "Domestic Workers & Hospitality", "region": "asia", "workersLabel": "12+ year partnership" },
-        { "flag": "🇮🇳", "name": { "en": "India", "ar": "الهند" }, "specialty": "Skilled Labor & IT Professionals", "region": "asia", "workersLabel": "10+ year partnership" },
-        { "flag": "🇳🇵", "name": { "en": "Nepal", "ar": "نيبال" }, "specialty": "Security & Hospitality Staff", "region": "asia", "workersLabel": "8+ year partnership" },
-        { "flag": "🇰🇪", "name": { "en": "Kenya", "ar": "كينيا" }, "specialty": "Domestic Workers & Hospitality", "region": "africa", "workersLabel": "5+ year partnership" },
-        { "flag": "🇺🇬", "name": { "en": "Uganda", "ar": "أوغندا" }, "specialty": "Domestic Workers & Agriculture", "region": "africa", "workersLabel": "5+ year partnership" },
-        { "flag": "🇪🇹", "name": { "en": "Ethiopia", "ar": "إثيوبيا" }, "specialty": "Domestic Workers & Hospitality", "region": "africa", "workersLabel": "6+ year partnership" }
+        {
+          "flag": "🇵🇭",
+          "name": { "en": "Philippines", "ar": "الفلبين" },
+          "specialty": "Domestic Workers & Healthcare",
+          "region": "asia",
+          "workersLabel": "15+ year partnership"
+        },
+        {
+          "flag": "🇧🇩",
+          "name": { "en": "Bangladesh", "ar": "بنغلاديش" },
+          "specialty": "Construction & Industrial Labor",
+          "region": "asia",
+          "workersLabel": "10+ year partnership"
+        },
+        {
+          "flag": "🇱🇰",
+          "name": { "en": "Sri Lanka", "ar": "سريلانكا" },
+          "specialty": "Domestic Workers & Hospitality",
+          "region": "asia",
+          "workersLabel": "12+ year partnership"
+        },
+        {
+          "flag": "🇮🇳",
+          "name": { "en": "India", "ar": "الهند" },
+          "specialty": "Skilled Labor & IT Professionals",
+          "region": "asia",
+          "workersLabel": "10+ year partnership"
+        },
+        {
+          "flag": "🇳🇵",
+          "name": { "en": "Nepal", "ar": "نيبال" },
+          "specialty": "Security & Hospitality Staff",
+          "region": "asia",
+          "workersLabel": "8+ year partnership"
+        },
+        {
+          "flag": "🇰🇪",
+          "name": { "en": "Kenya", "ar": "كينيا" },
+          "specialty": "Domestic Workers & Hospitality",
+          "region": "africa",
+          "workersLabel": "5+ year partnership"
+        },
+        {
+          "flag": "🇺🇬",
+          "name": { "en": "Uganda", "ar": "أوغندا" },
+          "specialty": "Domestic Workers & Agriculture",
+          "region": "africa",
+          "workersLabel": "5+ year partnership"
+        },
+        {
+          "flag": "🇪🇹",
+          "name": { "en": "Ethiopia", "ar": "إثيوبيا" },
+          "specialty": "Domestic Workers & Hospitality",
+          "region": "africa",
+          "workersLabel": "6+ year partnership"
+        }
       ]
     },
     "licensing": {
@@ -276,7 +418,10 @@
       "items": [
         {
           "icon": "FiShield",
-          "title": { "en": "Ministry of Human Resources & Social Development", "ar": "وزارة الموارد البشرية والتنمية الاجتماعية" },
+          "title": {
+            "en": "Ministry of Human Resources & Social Development",
+            "ar": "وزارة الموارد البشرية والتنمية الاجتماعية"
+          },
           "desc": {
             "en": "Officially licensed by the Ministry to provide recruitment services across the Kingdom of Saudi Arabia.",
             "ar": "مرخصون ومعتمدون رسمياً من الوزارة لتقديم خدمات الاستقدام في جميع أنحاء المملكة"
@@ -294,7 +439,10 @@
         },
         {
           "icon": "FiSettings",
-          "title": { "en": "International Quality Standards", "ar": "معايير جودة دولية" },
+          "title": {
+            "en": "International Quality Standards",
+            "ar": "معايير جودة دولية"
+          },
           "desc": {
             "en": "We adhere to the highest professional and international standards with rigorous vetting and compliance protocols.",
             "ar": "نلتزم بأعلى المعايير المهنية والدولية مع برامج فحص صارمة وبروتوكولات امتثال"
@@ -313,9 +461,12 @@
         "ar": "— شركة عبدالله خشّان الشمري للاستقدام"
       }
     },
-      "contact": {
+    "contact": {
       "label": { "en": "Get In Touch", "ar": "تواصل معنا" },
-      "heading": { "en": "Send Us Your Recruitment Request", "ar": "أرسل طلب استقدامك" },
+      "heading": {
+        "en": "Send Us Your Recruitment Request",
+        "ar": "أرسل طلب استقدامك"
+      },
       "description": {
         "en": "Fill in the form and our team will respond within 24 hours with a tailored solution.",
         "ar": "املأ النموذج وسيرد عليك فريقنا خلال ٢٤ ساعة بحل مخصص"
@@ -325,31 +476,64 @@
         "name": { "en": "Full Name", "ar": "الاسم الكامل" },
         "namePlaceholder": { "en": "Your full name", "ar": "اسمك الكامل" },
         "email": { "en": "Email Address", "ar": "البريد الإلكتروني" },
-        "emailPlaceholder": { "en": "your@email.com", "ar": "بريدك الإلكتروني" },
+        "emailPlaceholder": {
+          "en": "your@email.com",
+          "ar": "بريدك الإلكتروني"
+        },
         "phone": { "en": "Phone Number", "ar": "رقم الجوال" },
         "phonePlaceholder": { "en": "Your phone number", "ar": "رقم جوالك" },
         "service": { "en": "Service Required", "ar": "الخدمة المطلوبة" },
         "servicePlaceholder": { "en": "Select a service", "ar": "اختر الخدمة" },
         "country": { "en": "Preferred Country", "ar": "الدولة المفضلة" },
         "countryPlaceholder": { "en": "Select a country", "ar": "اختر الدولة" },
-        "message": { "en": "Additional Notes (Optional)", "ar": "ملاحظات إضافية (اختياري)" },
-        "messagePlaceholder": { "en": "Any specific requirements...", "ar": "أي متطلبات محددة..." },
+        "message": {
+          "en": "Additional Notes (Optional)",
+          "ar": "ملاحظات إضافية (اختياري)"
+        },
+        "messagePlaceholder": {
+          "en": "Any specific requirements...",
+          "ar": "أي متطلبات محددة..."
+        },
         "submit": { "en": "Send Request", "ar": "إرسال الطلب" },
         "sending": { "en": "Sending...", "ar": "جاري الإرسال..." },
         "success": {
           "en": "Your request has been sent successfully. We will contact you within 24 hours.",
           "ar": "تم إرسال طلبك بنجاح. سنتواصل معك خلال ٢٤ ساعة."
         },
-        "error": { "en": "Something went wrong. Please try again.", "ar": "حدث خطأ. يرجى المحاولة مرة أخرى." },
-        "rateLimit": { "en": "Too many attempts. Please try again later.", "ar": "محاولات كثيرة جداً، يرجى المحاولة لاحقاً." },
+        "error": {
+          "en": "Something went wrong. Please try again.",
+          "ar": "حدث خطأ. يرجى المحاولة مرة أخرى."
+        },
+        "rateLimit": {
+          "en": "Too many attempts. Please try again later.",
+          "ar": "محاولات كثيرة جداً، يرجى المحاولة لاحقاً."
+        },
         "responseTime": { "en": "24h response time", "ar": "رد خلال ٢٤ ساعة" },
         "validation": {
-          "nameRequired": { "en": "Please enter your name", "ar": "يرجى إدخال اسمك" },
-          "emailRequired": { "en": "Please enter your email", "ar": "يرجى إدخال بريدك الإلكتروني" },
-          "emailInvalid": { "en": "Please enter a valid email address", "ar": "يرجى إدخال بريد إلكتروني صحيح" },
-          "phoneRequired": { "en": "Please enter your phone number", "ar": "يرجى إدخال رقم جوالك" },
-          "serviceRequired": { "en": "Please select a service", "ar": "يرجى اختيار الخدمة" },
-          "countryRequired": { "en": "Please select a country", "ar": "يرجى اختيار الدولة" }
+          "nameRequired": {
+            "en": "Please enter your name",
+            "ar": "يرجى إدخال اسمك"
+          },
+          "emailRequired": {
+            "en": "Please enter your email",
+            "ar": "يرجى إدخال بريدك الإلكتروني"
+          },
+          "emailInvalid": {
+            "en": "Please enter a valid email address",
+            "ar": "يرجى إدخال بريد إلكتروني صحيح"
+          },
+          "phoneRequired": {
+            "en": "Please enter your phone number",
+            "ar": "يرجى إدخال رقم جوالك"
+          },
+          "serviceRequired": {
+            "en": "Please select a service",
+            "ar": "يرجى اختيار الخدمة"
+          },
+          "countryRequired": {
+            "en": "Please select a country",
+            "ar": "يرجى اختيار الدولة"
+          }
         }
       }
     },
@@ -382,18 +566,42 @@
         { "href": "#services", "label": { "en": "Services", "ar": "خدماتنا" } },
         { "href": "#countries", "label": { "en": "Countries", "ar": "الدول" } },
         { "href": "#contact", "label": { "en": "Contact", "ar": "اتصل بنا" } },
-        { "href": "#", "label": { "en": "Privacy Policy", "ar": "سياسة الخصوصية" } }
+        {
+          "href": "#",
+          "label": { "en": "Privacy Policy", "ar": "سياسة الخصوصية" }
+        }
       ],
       "serviceLinks": [
-        { "href": "#", "label": { "en": "Domestic Labor", "ar": "عمالة منزلية" } },
-        { "href": "#", "label": { "en": "Corporate Workforce", "ar": "قوى عاملة للشركات" } },
-        { "href": "#", "label": { "en": "Specialized Recruitment", "ar": "استقدام تخصصي" } },
-        { "href": "#", "label": { "en": "Visa & Documentation", "ar": "تأشيرات وتوثيق" } },
-        { "href": "#", "label": { "en": "Post-Arrival Follow-up", "ar": "متابعة ما بعد القدوم" } }
+        {
+          "href": "#",
+          "label": { "en": "Domestic Labor", "ar": "عمالة منزلية" }
+        },
+        {
+          "href": "#",
+          "label": { "en": "Corporate Workforce", "ar": "قوى عاملة للشركات" }
+        },
+        {
+          "href": "#",
+          "label": { "en": "Specialized Recruitment", "ar": "استقدام تخصصي" }
+        },
+        {
+          "href": "#",
+          "label": { "en": "Visa & Documentation", "ar": "تأشيرات وتوثيق" }
+        },
+        {
+          "href": "#",
+          "label": {
+            "en": "Post-Arrival Follow-up",
+            "ar": "متابعة ما بعد القدوم"
+          }
+        }
       ],
       "phone": "+966 55 XXX XXXX",
       "email": "info@ak-shr.com",
-      "address": { "en": "Riyadh, Kingdom of Saudi Arabia", "ar": "الرياض، المملكة العربية السعودية" },
+      "address": {
+        "en": "Riyadh, Kingdom of Saudi Arabia",
+        "ar": "الرياض، المملكة العربية السعودية"
+      },
       "copyright": {
         "en": "© 2026 Abdullah Khashan Al-Shammari Recruitment. All rights reserved.",
         "ar": "© 2026 شركة عبدالله خشّان الشمري للاستقدام. جميع الحقوق محفوظة."
@@ -778,5 +986,18 @@
       "submit": "Sign In",
       "submitting": "Signing in..."
     }
+  },
+
+  "topbar": {
+    "daysLeft": "{days} days left",
+    "dayLeft": "1 day left",
+    "expired": "Expired",
+    "popupTitle": "Subscription Expiry",
+    "popupLabel": "Expiration Date",
+    "popupSave": "Save",
+    "popupCancel": "Cancel",
+    "popupSaving": "Saving...",
+    "toastSuccess": "Subscription expiry updated successfully",
+    "toastError": "Failed to update subscription expiry"
   }
 }

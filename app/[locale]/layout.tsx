@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import ClientShell from "../_components/website/ClientShell";
 import { directionMap } from "@/constants/global";
 import { Tajawal, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "sonner";
-import ClientShell from "../_components/website/ClientShell";
 import { ErrorBoundary } from "../_components/website/ErrorBoundary";
 import { ReactNode } from "react";
 

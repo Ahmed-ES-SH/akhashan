@@ -461,3 +461,18 @@ export const COUNTRY_FIELD_API_MAP: Record<
   region: "region",
   workers_label: "workers_label",
 };
+
+// ── Subscription / Expiry types ────────────────────────────────────────
+
+export interface AdminSubscriptionResponse {
+  id: number;
+  is_active: boolean;
+  expiration_date: string;
+  last_notified_at: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AdminUpdateSubscriptionPayload {
+  expiration_date: string;
+}

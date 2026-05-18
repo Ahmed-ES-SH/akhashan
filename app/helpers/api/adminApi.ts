@@ -24,6 +24,8 @@ import type {
   AdminPaginatedCountriesResponse,
   AdminCreateCountryPayload,
   AdminUpdateCountryPayload,
+  AdminSubscriptionResponse,
+  AdminUpdateSubscriptionPayload,
 } from "@/app/types/website/admin.types";
 
 ///////////////////////////////////////////////////////////////////////
@@ -183,7 +185,11 @@ export async function adminSingleReorderLicensingItem(
 ///////////////////////////////////////////////////////////////////////
 
 export async function adminGetProcessSteps(): Promise<AdminProcessStep[]> {
-  return api.get<AdminProcessStep[]>("/api/admin/process-steps", undefined, true);
+  return api.get<AdminProcessStep[]>(
+    "/api/admin/process-steps",
+    undefined,
+    true,
+  );
 }
 
 export async function adminCreateProcessStep(
@@ -277,11 +283,7 @@ export async function adminDeleteService(id: number): Promise<void> {
 export async function adminToggleServiceActive(
   id: number,
 ): Promise<AdminService> {
-  return api.patch<AdminService>(
-    `/api/admin/services/${id}/toggle`,
-    {},
-    true,
-  );
+  return api.patch<AdminService>(`/api/admin/services/${id}/toggle`, {}, true);
 }
 
 export async function adminReorderServices(
@@ -395,11 +397,7 @@ export async function adminDeleteCountry(id: number): Promise<void> {
 export async function adminToggleCountryActive(
   id: number,
 ): Promise<AdminCountry> {
-  return api.patch<AdminCountry>(
-    `/api/admin/countries/${id}/toggle`,
-    {},
-    true,
-  );
+  return api.patch<AdminCountry>(`/api/admin/countries/${id}/toggle`, {}, true);
 }
 
 export async function adminReorderCountries(
@@ -419,6 +417,26 @@ export async function adminSingleReorderCountry(
   return api.patch<AdminCountry, AdminSingleReorderPayload>(
     `/api/admin/countries/${id}/reorder`,
     { sort_order },
+    true,
+  );
+}
+
+// ── Subscription expiry endpoints ──────────────────────────────────────
+
+export async function adminGetSubscription(): Promise<AdminSubscriptionResponse> {
+  return api.get<AdminSubscriptionResponse>(
+    "/api/admin/hosting-config",
+    undefined,
+    true,
+  );
+}
+
+export async function adminUpdateSubscription(
+  data: AdminUpdateSubscriptionPayload,
+): Promise<AdminSubscriptionResponse> {
+  return api.put<AdminSubscriptionResponse, AdminUpdateSubscriptionPayload>(
+    "/api/admin/hosting-config",
+    data,
     true,
   );
 }

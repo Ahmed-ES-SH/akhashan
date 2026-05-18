@@ -2,20 +2,17 @@
 
 import { useLocale } from "@/app/hooks/useLocale";
 import { useTranslation } from "@/app/hooks/useTranslation";
+import { useWhatsAppNumber } from "@/app/hooks/useWhatsAppNumber";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaWhatsapp,
-  FaXTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa6";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslation("home");
   const footer = t?.footer;
+  const { whatsappNumber } = useWhatsAppNumber();
 
   if (!footer) return null;
 
@@ -38,7 +35,8 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-white/55 mt-3.5">
               {footer.brandDesc?.[locale]}
             </p>
-            <div className="flex gap-2.5 mt-5">
+            {/* social media links */}
+            {/* <div className="flex gap-2.5 mt-5">
               <a
                 href="#"
                 aria-label="WhatsApp"
@@ -67,7 +65,7 @@ export default function Footer() {
               >
                 <FaLinkedinIn className="w-4 h-4 text-white/55 hover:text-gold" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -117,14 +115,22 @@ export default function Footer() {
             <h3 className="text-white font-bold text-base mb-5">
               {footer.contactTitle?.[locale]}
             </h3>
-            <div className="flex items-start gap-3 mb-3.5 text-sm text-white/55">
-              <FiPhone className="w-4.5 h-4.5 text-gold shrink-0 mt-0.5" />
-              <span>{footer.phone}</span>
-            </div>
-            <div className="flex items-start gap-3 mb-3.5 text-sm text-white/55">
+
+            {whatsappNumber && (
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 mb-3.5 text-sm text-white/55 hover:text-gold transition-colors duration-200"
+              >
+                <FaWhatsapp className="w-4.5 h-4.5 text-gold shrink-0 mt-0.5" />
+                <span>{whatsappNumber}</span>
+              </a>
+            )}
+            {/* <div className="flex items-start gap-3 mb-3.5 text-sm text-white/55">
               <FiMail className="w-4.5 h-4.5 text-gold shrink-0 mt-0.5" />
               <span>{footer.email}</span>
-            </div>
+            </div> */}
             <div className="flex items-start gap-3 mb-3.5 text-sm text-white/55">
               <FiMapPin className="w-4.5 h-4.5 text-gold shrink-0 mt-0.5" />
               <span>{footer.address?.[locale]}</span>
