@@ -49,7 +49,7 @@ export default function AdminLicensingItemCard({
       {/* ── Header: icon + reorder buttons ──────────────────────── */}
       <div className="flex items-start justify-between">
         <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-gold/12 to-gold/6">
-          {React.createElement(getIcon(item.icon), { className: "h-[28px] w-[28px] text-gold" })}
+          {React.createElement(getIcon(item.icon ?? "FaQuestionCircle"), { className: "h-[28px] w-[28px] text-gold" })}
         </div>
 
         {/* Reorder buttons */}

@@ -17,8 +17,8 @@ type StatusFilter = "new" | "read" | "replied" | "archived" | null;
 
 export default function AdminMessagesInbox() {
   const t = useTranslation("admin");
-  const msgs = (t as Record<string, unknown>)?.contactMessages as
-    | Record<string, unknown>
+  const msgs = t?.contactMessages as
+    | Record<string, any>
     | undefined;
 
   const {

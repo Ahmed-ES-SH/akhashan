@@ -36,16 +36,16 @@ export default function AdminMessageList({
   onRetry,
 }: AdminMessageListProps) {
   const t = useTranslation("admin");
-  const msgs = (t as Record<string, unknown>)?.contactMessages as
-    | Record<string, unknown>
+  const msgs = t?.contactMessages as
+    | Record<string, any>
     | undefined;
 
-  const noMessagesLabel = (msgs?.emptyState?.title as string) ?? (msgs?.noMessages as string) ?? "No messages yet.";
-  const noMessagesDesc = (msgs?.emptyState?.description as string) ?? "Contact form submissions from visitors will appear here. You can filter, read, and manage inquiries.";
-  const noMessagesFilteredLabel = (msgs?.emptyState?.titleFiltered as string) ?? (msgs?.noMessagesFiltered as string) ?? "No messages with this status.";
-  const noMessagesFilteredDesc = (msgs?.emptyState?.descriptionFiltered as string) ?? "Try selecting a different filter above.";
+  const noMessagesLabel = msgs?.emptyState?.title ?? msgs?.noMessages ?? "No messages yet.";
+  const noMessagesDesc = msgs?.emptyState?.description ?? "Contact form submissions from visitors will appear here. You can filter, read, and manage inquiries.";
+  const noMessagesFilteredLabel = msgs?.emptyState?.titleFiltered ?? msgs?.noMessagesFiltered ?? "No messages with this status.";
+  const noMessagesFilteredDesc = msgs?.emptyState?.descriptionFiltered ?? "Try selecting a different filter above.";
   const fetchErrorLabel =
-    ((msgs?.toasts as Record<string, string>)?.fetchError as string) ??
+    msgs?.toasts?.fetchError ??
     "Failed to load messages";
 
   // Loading skeleton
