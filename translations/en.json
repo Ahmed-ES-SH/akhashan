@@ -569,6 +569,10 @@
         {
           "href": "#",
           "label": { "en": "Privacy Policy", "ar": "سياسة الخصوصية" }
+        },
+        {
+          "href": "/admin",
+          "label": { "en": "Dashboard", "ar": "لوحة التحكم" }
         }
       ],
       "serviceLinks": [

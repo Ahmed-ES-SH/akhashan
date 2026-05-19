@@ -9,6 +9,7 @@ import type {
   AdminCreateCountryPayload,
   AdminUpdateCountryPayload,
 } from "@/app/types/website/admin.types";
+import CountryFlagSelect from "./CountryFlagSelect";
 
 ///////////////////////////////////////////////////////////////////////
 ///////////// AdminCountryForm — modal for create/edit ////////////////
@@ -22,6 +23,7 @@ interface AdminCountryFormProps {
   ) => Promise<void>;
   initialData?: AdminCountry;
   isSaving: boolean;
+  locale: "en" | "ar";
 }
 
 export default function AdminCountryForm({
@@ -30,6 +32,7 @@ export default function AdminCountryForm({
   onSave,
   initialData,
   isSaving,
+  locale,
 }: AdminCountryFormProps) {
   const adminT = useTranslation("admin");
   const countriesSection = (adminT as Record<string, unknown>)?.countries as
@@ -242,17 +245,12 @@ export default function AdminCountryForm({
             <label className="text-sm font-medium text-gray-700">
               {fieldLabels.flagEmoji ?? "Flag Emoji"}
             </label>
-            <input
-              type="text"
+            <CountryFlagSelect
               value={flagEmoji}
-              onChange={(e) => setFlagEmoji(e.target.value)}
-              onKeyDown={handleInputKeyDown}
-              maxLength={10}
+              onChange={setFlagEmoji}
               disabled={isSaving}
-              placeholder={placeholders.flagEmoji ?? "e.g. 🇸🇦"}
-              className={errors.flagEmoji ? errorInputClasses : inputClasses}
-              dir="ltr"
-              data-testid="country-form-flag-emoji"
+              hasError={!!errors.flagEmoji}
+              locale={locale}
             />
             {errors.flagEmoji && (
               <p className={errorTextClasses}>{errors.flagEmoji}</p>

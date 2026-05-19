@@ -1,9 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useAdminAuth } from "@/app/hooks/admin/useAdminAuth";
-import { useAdminLogin } from "@/app/hooks/admin/useAdminLogin";
-import { AdminLoginForm } from "@/app/_components/website/_admin/AdminLoginForm";
 import AdminMessagesInbox from "@/app/_components/website/_admin/AdminMessagesInbox";
+import { useLocale } from "@/app/hooks/useLocale";
 
 ///////////////////////////////////////////////////////////////////////
 /////////////// Admin Contact Messages Page Client — auth + inbox /////
@@ -11,9 +12,15 @@ import AdminMessagesInbox from "@/app/_components/website/_admin/AdminMessagesIn
 
 function ContactMessagesGate() {
   const { isLoading, isAuthenticated } = useAdminAuth();
-  const { login, isLoading: isLoggingIn, error: loginError } = useAdminLogin();
+  const locale = useLocale();
+  const router = useRouter();
 
-  // Still checking auth session
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.replace(`/${locale}/login`);
+    }
+  }, [isLoading, isAuthenticated, router, locale]);
+
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
@@ -22,22 +29,8 @@ function ContactMessagesGate() {
     );
   }
 
-  // Not authenticated — show login form
-  if (!isAuthenticated) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
-        <AdminLoginForm
-          onLogin={async (email, password) => {
-            await login(email, password);
-          }}
-          isLoading={isLoggingIn}
-          error={loginError}
-        />
-      </div>
-    );
-  }
+  if (!isAuthenticated) return null;
 
-  // Authenticated — show messages inbox
   return (
     <div className="min-h-screen bg-gray-50">
       <AdminMessagesInbox />

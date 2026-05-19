@@ -461,6 +461,7 @@ export default function AdminCountriesManager({
         onSave={handleSave}
         initialData={editingCountry}
         isSaving={isSaving}
+        locale={locale}
       />
     </div>
   );

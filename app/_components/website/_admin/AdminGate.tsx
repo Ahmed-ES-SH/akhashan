@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useAdminAuth } from "@/app/hooks/admin/useAdminAuth";
-import { useAdminLogin } from "@/app/hooks/admin/useAdminLogin";
-import { AdminLoginForm } from "@/app/_components/website/_admin/AdminLoginForm";
 import { AdminEditorProvider } from "@/app/contexts/AdminEditorContext";
 import AdminHeroSectionControl from "./AdminHeroSectionControl";
 import AdminStatsSectionControl from "./AdminStatsSectionControl";
@@ -32,11 +32,16 @@ interface AdminGateData {
 
 export function AdminGate({ data }: { data: AdminGateData }) {
   const locale = useLocale();
+  const router = useRouter();
 
   const { isLoading, isAuthenticated } = useAdminAuth();
-  const { login, isLoading: isLoggingIn, error: loginError } = useAdminLogin();
 
-  // Still checking auth session
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.replace(`/${locale}/login`);
+    }
+  }, [isLoading, isAuthenticated, router, locale]);
+
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
@@ -45,22 +50,8 @@ export function AdminGate({ data }: { data: AdminGateData }) {
     );
   }
 
-  // Not authenticated — show login form
-  if (!isAuthenticated) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
-        <AdminLoginForm
-          onLogin={async (email, password) => {
-            await login(email, password);
-          }}
-          isLoading={isLoggingIn}
-          error={loginError}
-        />
-      </div>
-    );
-  }
+  if (!isAuthenticated) return null;
 
-  // Authenticated — show admin editing interface
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Admin header */}
