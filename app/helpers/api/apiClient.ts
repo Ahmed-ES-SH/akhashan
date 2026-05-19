@@ -6,7 +6,7 @@ import type { ApiErrorResponse } from "@/app/types/website/home.types";
 
 function getBaseUrl(): string {
   if (typeof window !== "undefined") {
-    return process.env.NEXT_PUBLIC_API_URL ?? "";
+    return window.location.origin;
   }
   return process.env.API_URL ?? "";
 }
